@@ -12,21 +12,33 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
+  api.use(["templating", "underscore"]);
+  
+  
+
   
   //Client-Server Loading:
   api.addFiles(['lib/collections/post.js'],
       ['client','server']);
-
-  //Server only
-  api.addfiles(['lib/startup.js'],['server']);
-  
-  
+    
   //client only
   api.addFiles(
       ['lib/templates/overview.html',
+      'lib/templates/overview.js',
       'lib/templates/single.html'],
       ['client']
               );
+  
+  
+  
+  //Server only
+  api.addFiles(['lib/startup.js'],['server']);
+  
+  
+
+  
+  //Set Public Interface
+  api.export("Posts",['client'],['server']);
 
 });
 

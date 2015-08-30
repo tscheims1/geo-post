@@ -1,4 +1,11 @@
 <template name="overview">
-<h1>hello template</h1>
+<ul>
+{{#each posts}}
+    {{> post}}
+{{/each}}
+</ul>
+</template>
 
+<template name="post">
+<li class="post-overview">{{title}}</li>
 </template>
