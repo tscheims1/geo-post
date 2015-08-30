@@ -13,7 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
   api.use(["templating", "underscore"]);
-  
+  api.use(["iron:router@1.0.9"],'client');
   
 
   
@@ -23,9 +23,12 @@ Package.onUse(function(api) {
     
   //client only
   api.addFiles(
-      ['lib/templates/overview.html',
+      [
+      'lib/templates/overview.html',
       'lib/templates/overview.js',
-      'lib/templates/single.html'],
+      'lib/templates/single.html',
+      'lib/routes/router.js',
+    ],
       ['client']
               );
   
