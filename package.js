@@ -12,7 +12,22 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
-  api.addFiles('geo-post.js');
+  
+  //Client-Server Loading:
+  api.addFiles(['lib/collections/post.js'],
+      ['client','server']);
+
+  //Server only
+  api.addfiles(['lib/startup.js'],['server']);
+  
+  
+  //client only
+  api.addFiles(
+      ['lib/templates/overview.html',
+      'lib/templates/single.html'],
+      ['client']
+              );
+
 });
 
 Package.onTest(function(api) {
