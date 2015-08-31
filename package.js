@@ -27,6 +27,7 @@ Package.onUse(function(api) {
       'lib/templates/overview.html',
       'lib/templates/overview.js',
       'lib/templates/single.html',
+      'lib/templates/main.html',
       'lib/routes/router.js',
     ],
       ['client']
